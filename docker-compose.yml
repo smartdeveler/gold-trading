@@ -13,7 +13,7 @@ services:
       - db
     volumes:
       - .:/app
-    command: sh -c "npx ts-node src/scripts/createAdmin.ts && npm run dev"
+    command: sh -c "bun src/scripts/seedAdmin.ts && bun run dev"
 
   db:
     image: postgres:15
@@ -21,6 +21,10 @@ services:
     restart: always
     env_file:
       - .env
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD} 
     ports:
       - "${DB_PORT}:${DB_PORT}"
     volumes:
