@@ -1,6 +1,5 @@
 # Base image
-FROM node:20-alpine
-
+FROM oven/bun:1
 # Set working directory
 WORKDIR /app
 
