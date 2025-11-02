@@ -1,0 +1,46 @@
+{
+  "name": "gold-trading",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^24.9.2",
+    "@types/swagger-jsdoc": "^6.0.4"
+  },
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun --watch src/index.ts",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts,.js",
+    "migrate": "bun run ./node_modules/.bin/sequelize db:migrate",
+    "migrate:undo": "bun run ./node_modules/.bin/sequelize db:migrate:undo",
+    "seed": "bun run ./node_modules/.bin/sequelize db:seed:all",
+    "test": "bun test"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@sequelize/postgres": "^7.0.0-alpha.47",
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/swagger-ui-express": "^4.1.8",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "glob": "^11.0.3",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1",
+    "ts-node": "^10.9.2",
+    "yup": "^1.7.1"
+  }
+}
